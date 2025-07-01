@@ -1,7 +1,10 @@
 import React from 'react';
 import { Heart, Code, Terminal } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gray-900 border-t border-gray-800 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,36 +15,35 @@ const Footer: React.FC = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">DE</span>
               </div>
-              <span className="ml-3 text-white font-semibold text-lg">DevOps Engineer</span>
+              <span className="ml-3 text-white font-semibold text-lg">{t('footer.brand')}</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Automatizando el futuro, una línea de código a la vez. 
-              Especializado en infraestructura cloud, CI/CD y arquitecturas escalables.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Enlaces Rápidos</h3>
+            <h3 className="text-white font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#hero" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-sm">
-                  Inicio
+                  {t('nav.home')}
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-sm">
-                  Proyectos
+                  {t('nav.projects')}
                 </a>
               </li>
               <li>
                 <a href="#experience" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-sm">
-                  Experiencia
+                  {t('nav.experience')}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-sm">
-                  Contacto
+                  {t('nav.contact')}
                 </a>
               </li>
             </ul>
@@ -49,7 +51,7 @@ const Footer: React.FC = () => {
 
           {/* Tech Focus */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Especialidades</h3>
+            <h3 className="text-white font-semibold mb-4">{t('footer.specialties')}</h3>
             <div className="flex flex-wrap gap-2">
               {['AWS', 'Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'Ansible'].map((tech) => (
                 <span
@@ -66,16 +68,16 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <div className="flex items-center text-gray-400 text-sm mb-4 sm:mb-0">
-              <span>Hecho con</span>
+              <span>{t('footer.madeWith')}</span>
               <Heart className="w-4 h-4 text-red-500 mx-1" />
-              <span>y</span>
+              <span>{t('footer.and')}</span>
               <Code className="w-4 h-4 text-green-400 mx-1" />
-              <span>por DevOps Engineer</span>
+              <span>{t('footer.by')}</span>
             </div>
             
             <div className="flex items-center text-gray-400 text-sm">
               <Terminal className="w-4 h-4 mr-2" />
-              <span>© 2024 - Construyendo el futuro de la infraestructura</span>
+              <span>{t('footer.copyright')}</span>
             </div>
           </div>
         </div>

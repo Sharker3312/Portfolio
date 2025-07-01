@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Filter } from 'lucide-react';
+import { Github, ExternalLink, Filter, Image as ImageIcon } from 'lucide-react';
 import { projects } from '../data/portfolio';
-import { Project } from '../types';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedDiagram, setSelectedDiagram] = useState<string | null>(null);
+  const { t } = useTranslation();
   
   const categories = ['all', 'CI/CD', 'IaC', 'Kubernetes', 'Monitoring', 'Pipelines', 'Automation'];
   
@@ -24,16 +26,23 @@ const Projects: React.FC = () => {
     return colors[category] || 'bg-gray-500';
   };
 
+  const openDiagram = (diagramUrl: string) => {
+    setSelectedDiagram(diagramUrl);
+  };
+
+  const closeDiagram = () => {
+    setSelectedDiagram(null);
+  };
+
   return (
     <section id="projects" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Proyectos Destacados
+            {t('projects.title')}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Soluciones reales implementadas en entornos de producción, 
-            desde automatización hasta infraestructura cloud-native
+            {t('projects.description')}
           </p>
         </div>
 
@@ -50,7 +59,7 @@ const Projects: React.FC = () => {
                   : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
               }`}
             >
-              {category === 'all' ? 'Todos' : category}
+              {category === 'all' ? t('projects.all') : category}
             </button>
           ))}
         </div>
@@ -61,6 +70,25 @@ const Projects: React.FC = () => {
               key={project.id}
               className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group"
             >
+              {/* Project Diagram Preview */}
+              {project.diagram && (
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.diagram} 
+                    alt={`${project.name} architecture`}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent"></div>
+                  <button
+                    onClick={() => openDiagram(project.diagram!)}
+                    className="absolute top-4 right-4 bg-gray-900/80 hover:bg-gray-900 text-white p-2 rounded-lg transition-colors duration-200"
+                    title={t('projects.viewDiagram')}
+                  >
+                    <ImageIcon size={16} />
+                  </button>
+                </div>
+              )}
+
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium text-white ${getCategoryColor(project.category)}`}>
@@ -116,11 +144,33 @@ const Projects: React.FC = () => {
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-400 text-lg">
-              No hay proyectos en esta categoría
+              {t('projects.noProjects')}
             </p>
           </div>
         )}
       </div>
+
+      {/* Diagram Modal */}
+      {selectedDiagram && (
+        <div 
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          onClick={closeDiagram}
+        >
+          <div className="relative max-w-4xl max-h-full">
+            <img 
+              src={selectedDiagram} 
+              alt="Project Architecture Diagram"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+            <button
+              onClick={closeDiagram}
+              className="absolute top-4 right-4 bg-gray-900/80 hover:bg-gray-900 text-white p-2 rounded-lg transition-colors duration-200"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

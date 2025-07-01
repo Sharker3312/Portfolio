@@ -1,7 +1,10 @@
 import React from 'react';
 import { ChevronDown, Github, Linkedin, Mail, Terminal, Cloud, Zap } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
@@ -37,17 +40,17 @@ const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="block">DevOps Engineer</span>
+              <span className="block">{t('hero.title')}</span>
               <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-orange-500 bg-clip-text text-transparent">
-                Cloud & Automation Specialist
+                {t('hero.subtitle')}
               </span>
             </h1>
             
             <p className="text-xl sm:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Automatizando procesos, optimizando infraestructura y acelerando despliegues
+              {t('hero.description')}
               <br />
               <span className="text-lg text-gray-400">
-                Transformando ideas en soluciones escalables y confiables
+                {t('hero.tagline')}
               </span>
             </p>
           </div>
@@ -57,14 +60,14 @@ const Hero: React.FC = () => {
               onClick={scrollToProjects}
               className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
             >
-              Ver Proyectos
+              {t('hero.viewProjects')}
             </button>
             
             <button
               onClick={scrollToContact}
               className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
             >
-              Contacto
+              {t('hero.contact')}
             </button>
           </div>
 

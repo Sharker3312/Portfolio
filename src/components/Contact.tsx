@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,7 +22,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
-    alert('¡Mensaje enviado! Te contactaré pronto.');
+    alert(t('contact.messageSent'));
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -29,11 +31,10 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Contacto
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            ¿Tienes un proyecto interesante? ¿Necesitas consultoría en DevOps? 
-            Hablemos sobre cómo puedo ayudarte a optimizar tu infraestructura
+            {t('contact.description')}
           </p>
         </div>
 
@@ -42,7 +43,7 @@ const Contact: React.FC = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                Información de Contacto
+                {t('contact.info')}
               </h3>
               
               <div className="space-y-6">
@@ -51,7 +52,7 @@ const Contact: React.FC = () => {
                     <Mail className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Email</p>
+                    <p className="text-gray-400 text-sm">{t('contact.email')}</p>
                     <a 
                       href="mailto:contact@devopsengineer.com" 
                       className="text-white hover:text-green-400 transition-colors duration-300"
@@ -66,7 +67,7 @@ const Contact: React.FC = () => {
                     <Phone className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Teléfono</p>
+                    <p className="text-gray-400 text-sm">{t('contact.phone')}</p>
                     <a 
                       href="tel:+1234567890" 
                       className="text-white hover:text-blue-400 transition-colors duration-300"
@@ -81,8 +82,8 @@ const Contact: React.FC = () => {
                     <MapPin className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Ubicación</p>
-                    <p className="text-white">Remote / Global</p>
+                    <p className="text-gray-400 text-sm">{t('contact.location')}</p>
+                    <p className="text-white">{t('contact.remote')}</p>
                   </div>
                 </div>
               </div>
@@ -90,7 +91,7 @@ const Contact: React.FC = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Sígueme en</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">{t('contact.followMe')}</h4>
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/devops-engineer"
@@ -121,13 +122,13 @@ const Contact: React.FC = () => {
 
             {/* Availability */}
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-              <h4 className="text-lg font-semibold text-white mb-3">Disponibilidad</h4>
+              <h4 className="text-lg font-semibold text-white mb-3">{t('contact.availability')}</h4>
               <div className="flex items-center mb-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                <span className="text-green-400 font-medium">Disponible para proyectos</span>
+                <span className="text-green-400 font-medium">{t('contact.available')}</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Abierto a oportunidades de consultoría, proyectos freelance y posiciones full-time remotas
+                {t('contact.availableDesc')}
               </p>
             </div>
           </div>
@@ -136,14 +137,14 @@ const Contact: React.FC = () => {
           <div>
             <div className="bg-gray-900 rounded-xl p-8 border border-gray-700">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Envíame un mensaje
+                {t('contact.sendMessage')}
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-gray-400 text-sm font-medium mb-2">
-                      Nombre *
+                      {t('contact.name')} *
                     </label>
                     <input
                       type="text"
@@ -153,13 +154,13 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors duration-300"
-                      placeholder="Tu nombre"
+                      placeholder={t('contact.namePlaceholder')}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-gray-400 text-sm font-medium mb-2">
-                      Email *
+                      {t('contact.email')} *
                     </label>
                     <input
                       type="email"
@@ -169,14 +170,14 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors duration-300"
-                      placeholder="tu@email.com"
+                      placeholder={t('contact.emailPlaceholder')}
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-gray-400 text-sm font-medium mb-2">
-                    Asunto *
+                    {t('contact.subject')} *
                   </label>
                   <select
                     id="subject"
@@ -186,18 +187,18 @@ const Contact: React.FC = () => {
                     required
                     className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors duration-300"
                   >
-                    <option value="">Selecciona un asunto</option>
-                    <option value="consulting">Consultoría DevOps</option>
-                    <option value="project">Nuevo Proyecto</option>
-                    <option value="job">Oportunidad Laboral</option>
-                    <option value="collaboration">Colaboración</option>
-                    <option value="other">Otro</option>
+                    <option value="">{t('contact.selectSubject')}</option>
+                    <option value="consulting">{t('contact.consulting')}</option>
+                    <option value="project">{t('contact.project')}</option>
+                    <option value="job">{t('contact.job')}</option>
+                    <option value="collaboration">{t('contact.collaboration')}</option>
+                    <option value="other">{t('contact.other')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-gray-400 text-sm font-medium mb-2">
-                    Mensaje *
+                    {t('contact.message')} *
                   </label>
                   <textarea
                     id="message"
@@ -207,7 +208,7 @@ const Contact: React.FC = () => {
                     required
                     rows={6}
                     className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors duration-300 resize-none"
-                    placeholder="Cuéntame sobre tu proyecto o consulta..."
+                    placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
 
@@ -216,7 +217,7 @@ const Contact: React.FC = () => {
                   className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 flex items-center justify-center"
                 >
                   <Send className="mr-2 w-5 h-5" />
-                  Enviar Mensaje
+                  {t('contact.send')}
                 </button>
               </form>
             </div>

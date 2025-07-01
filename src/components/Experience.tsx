@@ -1,18 +1,20 @@
 import React from 'react';
 import { Calendar, MapPin, ChevronRight } from 'lucide-react';
 import { experiences } from '../data/portfolio';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Experience: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="experience" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Experiencia Profesional
+            {t('experience.title')}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Trayectoria construyendo y optimizando infraestructura cloud, 
-            automatizando procesos y liderando transformaciones DevOps
+            {t('experience.description')}
           </p>
         </div>
 
@@ -42,7 +44,7 @@ const Experience: React.FC = () => {
                     <div className="flex items-center text-gray-400 bg-gray-800 px-4 py-2 rounded-full">
                       <Calendar size={16} className="mr-2" />
                       <span className="text-sm">
-                        {exp.startDate} - {exp.endDate}
+                        {exp.startDate} - {exp.endDate === 'Present' ? t('experience.present') : exp.endDate}
                       </span>
                     </div>
                   </div>
@@ -57,7 +59,7 @@ const Experience: React.FC = () => {
                   </div>
 
                   <div className="border-t border-gray-700 pt-4">
-                    <p className="text-gray-400 text-sm mb-3">Tecnologías utilizadas:</p>
+                    <p className="text-gray-400 text-sm mb-3">{t('experience.technologies')}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, idx) => (
                         <span
@@ -77,7 +79,7 @@ const Experience: React.FC = () => {
 
         <div className="text-center mt-16">
           <p className="text-gray-400 text-lg">
-            Comprometido con la excelencia técnica y la mejora continua
+            {t('experience.footer')}
           </p>
         </div>
       </div>

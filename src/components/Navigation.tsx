@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
+import LanguageToggle from './LanguageToggle';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const { t } = useTranslation();
 
   const navItems = [
-    { id: 'hero', label: 'Inicio' },
-    { id: 'certifications', label: 'Certificaciones' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'experience', label: 'Experiencia' },
-    { id: 'tech-stack', label: 'Stack Técnico' },
-    { id: 'contact', label: 'Contacto' }
+    { id: 'hero', label: t('nav.home') },
+    { id: 'certifications', label: t('nav.certifications') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'experience', label: t('nav.experience') },
+    { id: 'tech-stack', label: t('nav.techStack') },
+    { id: 'contact', label: t('nav.contact') }
   ];
 
   useEffect(() => {
@@ -48,11 +51,11 @@ const Navigation: React.FC = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">DE</span>
             </div>
-            <span className="ml-3 text-white font-semibold text-lg">DevOps Engineer</span>
+            <span className="ml-3 text-white font-semibold text-lg">{t('footer.brand')}</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -66,10 +69,12 @@ const Navigation: React.FC = () => {
                 {item.label}
               </button>
             ))}
+            <LanguageToggle />
           </div>
 
           {/* Mobile Navigation Toggle */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-white p-2"
