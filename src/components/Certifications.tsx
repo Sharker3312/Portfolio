@@ -26,12 +26,12 @@ const Certifications: React.FC = () => {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <div className={`w-12 h-12 ${cert.color} rounded-lg flex items-center justify-center overflow-hidden`}>
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300">
                     {cert.icon ? (
                       <img 
                         src={cert.icon} 
                         alt={cert.name}
-                        className="w-8 h-8 object-contain"
+                        className="w-full h-full object-contain"
                         onError={(e) => {
                           // Fallback to Award icon if image fails to load
                           const target = e.target as HTMLImageElement;
@@ -40,7 +40,9 @@ const Certifications: React.FC = () => {
                         }}
                       />
                     ) : null}
-                    <Award className="text-white w-6 h-6 hidden" />
+                    <div className="hidden w-full h-full bg-gray-700 rounded-lg flex items-center justify-center">
+                      <Award className="text-white w-8 h-8" />
+                    </div>
                   </div>
                 </div>
                 <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">

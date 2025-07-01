@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden pt-20">
       {/* Background Animation Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -right-4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -30,13 +30,13 @@ const Hero: React.FC = () => {
 
       {/* Floating Icons */}
       <div className="absolute inset-0">
-        <Terminal className="absolute top-20 left-10 text-green-400/20 w-8 h-8 animate-bounce delay-0" />
-        <Cloud className="absolute top-32 right-20 text-blue-400/20 w-10 h-10 animate-bounce delay-1000" />
+        <Terminal className="absolute top-32 left-10 text-green-400/20 w-8 h-8 animate-bounce delay-0" />
+        <Cloud className="absolute top-44 right-20 text-blue-400/20 w-10 h-10 animate-bounce delay-1000" />
         <Zap className="absolute bottom-32 left-20 text-orange-400/20 w-6 h-6 animate-bounce delay-500" />
         <Terminal className="absolute bottom-20 right-10 text-green-400/20 w-8 h-8 animate-bounce delay-1500" />
       </div>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-8">
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
