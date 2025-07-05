@@ -33,6 +33,17 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -43,6 +54,10 @@
 
 .animate-blink {
   animation: blink 1s infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 /* Gradient border animation */
@@ -96,4 +111,24 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
+}
+
+/* Terminal specific styles */
+.font-mono {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive adjustments for professional photo */
+@media (max-width: 768px) {
+  .professional-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 769px) {
+  .professional-photo {
+    width: 200px;
+    height: 200px;
+  }
 }
