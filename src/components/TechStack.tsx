@@ -18,7 +18,6 @@ interface TechCategory {
 
 const TechStack: React.FC = () => {
   const { t } = useTranslation();
-  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
   const techCategories: TechCategory[] = [
     {
@@ -157,11 +156,9 @@ const TechStack: React.FC = () => {
                   <div
                     key={techIndex}
                     className={`relative bg-gray-700/30 rounded-xl p-4 transition-all duration-300 cursor-pointer group/tech ${tech.color} hover:scale-110 hover:shadow-lg border border-gray-600/30 hover:border-gray-500/50`}
-                    onMouseEnter={() => setHoveredTech(`${categoryIndex}-${techIndex}`)}
-                    onMouseLeave={() => setHoveredTech(null)}
                   >
                     <div className="flex flex-col items-center">
-                      <div className="w-12 h-12 mb-2 flex items-center justify-center">
+                      <div className="w-12 h-12 mb-3 flex items-center justify-center">
                         <img
                           src={tech.icon}
                           alt={tech.name}
@@ -178,12 +175,8 @@ const TechStack: React.FC = () => {
                         </div>
                       </div>
                       
-                      {/* Technology Name - Always visible on mobile, hover on desktop */}
-                      <span className={`text-xs font-medium text-center leading-tight transition-all duration-300 ${
-                        hoveredTech === `${categoryIndex}-${techIndex}` || window.innerWidth < 768
-                          ? 'text-white opacity-100 transform translate-y-0'
-                          : 'text-gray-400 opacity-70 md:opacity-0 md:transform md:translate-y-2'
-                      }`}>
+                      {/* Technology Name - Always visible */}
+                      <span className="text-xs font-medium text-center leading-tight text-white transition-all duration-300">
                         {tech.name}
                       </span>
                     </div>
