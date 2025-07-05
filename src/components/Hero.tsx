@@ -300,23 +300,6 @@ const Hero: React.FC = () => {
                   />
                 </div>
               </div>
-
-              {/* Floating Tech Badges around photo */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center animate-bounce delay-0 shadow-lg hover:scale-110 transition-transform duration-300">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" className="w-8 h-8" />
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center animate-bounce delay-1000 shadow-lg hover:scale-110 transition-transform duration-300">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" className="w-8 h-8" />
-              </div>
-              
-              <div className="absolute top-1/2 -left-8 w-14 h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center animate-bounce delay-500 shadow-lg hover:scale-110 transition-transform duration-300">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="w-7 h-7" />
-              </div>
-              
-              <div className="absolute top-1/2 -right-8 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center animate-bounce delay-1500 shadow-lg hover:scale-110 transition-transform duration-300">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" className="w-7 h-7" />
-              </div>
             </div>
           </div>
         </div>
