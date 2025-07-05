@@ -27,9 +27,7 @@ const Hero: React.FC = () => {
     'terraform plan -out=tfplan',
     'aws s3 sync ./dist s3://my-bucket',
     'helm upgrade myapp ./charts/myapp',
-    'ansible-playbook deploy.yml',
-    'prometheus --config.file=prometheus.yml',
-    'git push origin main'
+    'ansible-playbook deploy.yml'
   ];
 
   // Typing animation effect with infinite loop
