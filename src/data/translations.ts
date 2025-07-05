@@ -37,8 +37,8 @@ export const translations: Translations = {
   'experience.present': { es: 'Presente', en: 'Present' },
 
   // Tech Stack
-  'techStack.title': { es: 'Stack Técnico', en: 'Tech Stack' },
-  'techStack.description': { es: 'Herramientas y tecnologías que domino para construir soluciones robustas y escalables', en: 'Tools and technologies I master to build robust and scalable solutions' },
+  'techStack.title': { es: 'Stack Tecnológico', en: 'Tech Stack' },
+  'techStack.description': { es: 'Herramientas y tecnologías que domino para construir soluciones robustas, escalables y seguras', en: 'Tools and technologies I master to build robust, scalable and secure solutions' },
   'techStack.philosophy': { es: 'Filosofía DevOps', en: 'DevOps Philosophy' },
   'techStack.automation': { es: 'Automatización', en: 'Automation' },
   'techStack.automationDesc': { es: 'Eliminar tareas manuales repetitivas para aumentar la eficiencia', en: 'Eliminate repetitive manual tasks to increase efficiency' },
