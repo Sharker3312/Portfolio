@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                       href="mailto:contact@devopsengineer.com" 
                       className="text-white hover:text-green-400 transition-colors duration-300"
                     >
-                      contact@devopsengineer.com
+                      lesterdprez.work@gmail.com
                     </a>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
                       href="tel:+1234567890" 
                       className="text-white hover:text-blue-400 transition-colors duration-300"
                     >
-                      +1 (234) 567-890
+                      +1 (849) 517-2107
                     </a>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
               <h4 className="text-lg font-semibold text-white mb-4">{t('contact.followMe')}</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/devops-engineer"
+                  href="https://github.com/sharker3312"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors duration-300 group"
@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                   <Github className="text-gray-400 group-hover:text-white w-6 h-6" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/devops-engineer"
+                  href="https://linkedin.com/in/lesterdprez"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 group"
