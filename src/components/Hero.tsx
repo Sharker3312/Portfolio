@@ -115,129 +115,106 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-5xl mx-auto text-center">
           
-          {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <div className="mb-8">
-              {/* Constant Typing Animation Title */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                <span className="block mb-2">Hi, I'm Lester</span>
-                <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent min-h-[1.2em] font-mono">
-                  {typedText}
-                  <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
-                </span>
-              </h1>
-              
-              <p className="text-xl sm:text-2xl text-gray-300 mb-6 leading-relaxed">
-                {t('hero.description')}
-              </p>
-              
-              <p className="text-lg text-gray-400 mb-8">
-                {t('hero.tagline')}
-              </p>
+          {/* Main Content - Now Centered */}
+          <div className="mb-8">
+            {/* Constant Typing Animation Title */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <span className="block mb-2">Hi, I'm Lester</span>
+              <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent min-h-[1.2em] font-mono">
+                {typedText}
+                <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
+              </span>
+            </h1>
+            
+            <p className="text-xl sm:text-2xl text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
+              {t('hero.description')}
+            </p>
+            
+            <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
+              {t('hero.tagline')}
+            </p>
 
-              {/* Certification Badges */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                <div className="flex items-center bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 group">
-                  <img 
-                    src="https://images.credly.com/size/68x68/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" 
-                    alt="AWS" 
-                    className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <span className="text-sm text-gray-300 group-hover:text-orange-400 transition-colors duration-300">AWS Certified</span>
-                </div>
-                
-                <div className="flex items-center bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group">
-                  <img 
-                    src="https://images.credly.com/size/68x68/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png" 
-                    alt="Kubernetes" 
-                    className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <span className="text-sm text-gray-300 group-hover:text-blue-400 transition-colors duration-300">Kubernetes CKA</span>
-                </div>
-                
-                <div className="flex items-center bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-700/50 hover:border-blue-600/50 transition-all duration-300 group">
-                  <img 
-                    src="https://images.credly.com/size/68x68/images/ae2f5bae-b110-4ea1-8e26-77cf5f76c81e/GCC_badge_IT_Support_1000x1000.png" 
-                    alt="Google Cloud" 
-                    className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <span className="text-sm text-gray-300 group-hover:text-blue-600 transition-colors duration-300">GCP Certified</span>
-                </div>
+            {/* Certification Badges */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-center bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 group">
+                <img 
+                  src="https://images.credly.com/size/68x68/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" 
+                  alt="AWS" 
+                  className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform duration-300"
+                />
+                <span className="text-sm text-gray-300 group-hover:text-orange-400 transition-colors duration-300">AWS Certified</span>
               </div>
-            </div>
-
-            {/* Enhanced Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
-              <button
-                onClick={scrollToProjects}
-                className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 overflow-hidden"
-              >
-                <span className="relative z-10">{t('hero.viewProjects')}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
               
-              <button
-                onClick={scrollToContact}
-                className="group relative border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 overflow-hidden"
-              >
-                <span className="relative z-10">{t('hero.contact')}</span>
-                <div className="absolute inset-0 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </button>
-            </div>
-
-            {/* Enhanced Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 mb-16">
-              <a
-                href="https://github.com/sharker3312"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-gray-500/50 transition-all duration-300 transform hover:scale-110"
-              >
-                <Github className="text-gray-400 group-hover:text-white w-6 h-6 transition-colors duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
-              </a>
+              <div className="flex items-center bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group">
+                <img 
+                  src="https://images.credly.com/size/68x68/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png" 
+                  alt="Kubernetes" 
+                  className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform duration-300"
+                />
+                <span className="text-sm text-gray-300 group-hover:text-blue-400 transition-colors duration-300">Kubernetes CKA</span>
+              </div>
               
-              <a
-                href="https://linkedin.com/in/lesterdprez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-110"
-              >
-                <Linkedin className="text-gray-400 group-hover:text-blue-400 w-6 h-6 transition-colors duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
-              </a>
-              
-              <a
-                href="mailto:lesterdprez.work@gmail.com"
-                className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 transform hover:scale-110"
-              >
-                <Mail className="text-gray-400 group-hover:text-green-400 w-6 h-6 transition-colors duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
-              </a>
+              <div className="flex items-center bg-gray-800/50 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-700/50 hover:border-blue-600/50 transition-all duration-300 group">
+                <img 
+                  src="https://images.credly.com/size/68x68/images/ae2f5bae-b110-4ea1-8e26-77cf5f76c81e/GCC_badge_IT_Support_1000x1000.png" 
+                  alt="Google Cloud" 
+                  className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform duration-300"
+                />
+                <span className="text-sm text-gray-300 group-hover:text-blue-600 transition-colors duration-300">GCP Certified</span>
+              </div>
             </div>
           </div>
 
-          {/* Right Content - Professional Photo */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Animated Rings */}
-              <div className="absolute inset-0 rounded-full border-2 border-green-400/30 animate-ping"></div>
-              <div className="absolute inset-4 rounded-full border-2 border-blue-400/20 animate-ping delay-1000"></div>
-              <div className="absolute inset-8 rounded-full border-2 border-purple-400/10 animate-ping delay-2000"></div>
-              
-              {/* Professional Photo - Circular with subtle border */}
-              <div className="relative w-80 h-80 lg:w-80 lg:h-80 md:w-60 md:h-60 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-gray-700/50 p-1 bg-gradient-to-r from-green-400/20 via-blue-500/20 to-purple-500/20 hover:scale-105 hover:shadow-2xl transition-all duration-500 group">
-                <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 border-2 border-gray-600">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                    alt="DevOps Engineer Professional Photo"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            </div>
+          {/* Enhanced Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <button
+              onClick={scrollToProjects}
+              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25 overflow-hidden"
+            >
+              <span className="relative z-10">{t('hero.viewProjects')}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+            
+            <button
+              onClick={scrollToContact}
+              className="group relative border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 overflow-hidden"
+            >
+              <span className="relative z-10">{t('hero.contact')}</span>
+              <div className="absolute inset-0 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </button>
+          </div>
+
+          {/* Enhanced Social Links */}
+          <div className="flex justify-center space-x-6 mb-16">
+            <a
+              href="https://github.com/sharker3312"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-gray-500/50 transition-all duration-300 transform hover:scale-110"
+            >
+              <Github className="text-gray-400 group-hover:text-white w-6 h-6 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
+            </a>
+            
+            <a
+              href="https://linkedin.com/in/lesterdprez"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-110"
+            >
+              <Linkedin className="text-gray-400 group-hover:text-blue-400 w-6 h-6 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
+            </a>
+            
+            <a
+              href="mailto:lesterdprez.work@gmail.com"
+              className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 transform hover:scale-110"
+            >
+              <Mail className="text-gray-400 group-hover:text-green-400 w-6 h-6 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300"></div>
+            </a>
           </div>
         </div>
       </div>
