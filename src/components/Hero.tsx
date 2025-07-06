@@ -104,30 +104,32 @@ const Hero: React.FC = () => {
       {/* Floating Particles */}
       <FloatingParticles />
 
-      {/* Floating Tech Icons */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Terminal className="absolute top-32 left-10 text-green-400/30 w-8 h-8 animate-bounce delay-0" />
-        <Cloud className="absolute top-44 right-20 text-blue-400/30 w-10 h-10 animate-bounce delay-1000" />
-        <Zap className="absolute bottom-32 left-20 text-orange-400/30 w-6 h-6 animate-bounce delay-500" />
-        <Code className="absolute bottom-20 right-10 text-purple-400/30 w-8 h-8 animate-bounce delay-1500" />
-        <Shield className="absolute top-1/3 left-1/4 text-red-400/20 w-6 h-6 animate-bounce delay-2000" />
-        <Award className="absolute top-2/3 right-1/4 text-yellow-400/20 w-7 h-7 animate-bounce delay-2500" />
-      </div>
-
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <div className="mb-8">
+              {/* Name Introduction */}
+              <div className="mb-6">
+                <p className="text-lg text-gray-400 mb-2">Hola, soy</p>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+                  <span className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                    Lester Díaz Pérez
+                  </span>
+                </h1>
+              </div>
+
               {/* Constant Typing Animation Title */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                <span className="block mb-2">Soy</span>
-                <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent min-h-[1.2em] font-mono">
-                  {typedText}
-                  <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
-                </span>
-              </h1>
+              <div className="mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  <span className="block mb-2">Soy</span>
+                  <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent min-h-[1.2em] font-mono">
+                    {typedText}
+                    <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
+                  </span>
+                </h2>
+              </div>
               
               <p className="text-xl sm:text-2xl text-gray-300 mb-6 leading-relaxed">
                 {t('hero.description')}
@@ -232,7 +234,7 @@ const Hero: React.FC = () => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 border-2 border-gray-600">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                    alt="DevOps Engineer Professional Photo"
+                    alt="Lester Díaz Pérez - DevOps Engineer Professional Photo"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
