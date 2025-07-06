@@ -54,7 +54,7 @@ export const translations: Translations = {
   'contact.email': { es: 'Email', en: 'Email' },
   'contact.phone': { es: 'Teléfono', en: 'Phone' },
   'contact.location': { es: 'Ubicación', en: 'Location' },
-  'contact.remote': { es: 'Remote / Global', en: 'Remote / Global' },
+  'contact.remote': { es: 'Santo Domingo / Republica Domenicana', en: 'Santo Domingo / Dominican Republic' },
   'contact.followMe': { es: 'Sígueme en', en: 'Follow me on' },
   'contact.availability': { es: 'Disponibilidad', en: 'Availability' },
   'contact.available': { es: 'Disponible para proyectos', en: 'Available for projects' },

@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
             <div className="mb-8">
               {/* Constant Typing Animation Title */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                <span className="block mb-2">Soy</span>
+                <span className="block mb-2">Hi, I'm Lester</span>
                 <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent min-h-[1.2em] font-mono">
                   {typedText}
                   <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
@@ -190,7 +190,7 @@ const Hero: React.FC = () => {
             {/* Enhanced Social Links */}
             <div className="flex justify-center lg:justify-start space-x-6 mb-16">
               <a
-                href="https://github.com/devops-engineer"
+                href="https://github.com/sharker3312"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-gray-500/50 transition-all duration-300 transform hover:scale-110"
@@ -200,7 +200,7 @@ const Hero: React.FC = () => {
               </a>
               
               <a
-                href="https://linkedin.com/in/devops-engineer"
+                href="https://linkedin.com/in/lesterdprez"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-110"
@@ -210,7 +210,7 @@ const Hero: React.FC = () => {
               </a>
               
               <a
-                href="mailto:contact@devopsengineer.com"
+                href="mailto:lesterdprez.work@gmail.com"
                 className="group relative w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-green-500/50 transition-all duration-300 transform hover:scale-110"
               >
                 <Mail className="text-gray-400 group-hover:text-green-400 w-6 h-6 transition-colors duration-300" />
